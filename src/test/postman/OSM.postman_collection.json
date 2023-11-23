@@ -1,0 +1,444 @@
+{
+	"info": {
+		"_postman_id": "4e09002e-5ad7-4dc5-9c95-fe88de37ae08",
+		"name": "OSM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3254777",
+		"_collection_link": "https://cloudy-capsule-752318.postman.co/workspace/Strava-Workspace~b65527c5-7866-40af-8299-a5ac79a47731/collection/3254777-4e09002e-5ad7-4dc5-9c95-fe88de37ae08?action=share&source=collection_link&creator=3254777"
+	},
+	"item": [
+		{
+			"name": "OSM OAuth",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.onlinescoutmanager.co.uk/oauth/authorize?client_id={{CLIENT_ID}}&response_type=code&redirect_uri=https://localhost:8080&client_secret={{CLIENT_SECRET}}",
+					"protocol": "https",
+					"host": [
+						"www",
+						"onlinescoutmanager",
+						"co",
+						"uk"
+					],
+					"path": [
+						"oauth",
+						"authorize"
+					],
+					"query": [
+						{
+							"key": "client_id",
+							"value": "{{CLIENT_ID}}"
+						},
+						{
+							"key": "response_type",
+							"value": "code"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "https://localhost:8080"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{CLIENT_SECRET}}"
+						},
+						{
+							"key": "grant_type",
+							"value": "password&username=chris@weewelchie.org&password=used2Think$$",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OSM OAuth Token",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.onlinescoutmanager.co.uk/oauth/token?client_id={{CLIENT_ID}}&client_secret={{CLIENT_SECRET}}&grant_type=client_credentials&scope={{SCOPE}}",
+					"protocol": "https",
+					"host": [
+						"www",
+						"onlinescoutmanager",
+						"co",
+						"uk"
+					],
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "client_id",
+							"value": "{{CLIENT_ID}}"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{CLIENT_SECRET}}"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials"
+						},
+						{
+							"key": "scope",
+							"value": "{{SCOPE}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generic Data",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AUTH_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.onlinescoutmanager.co.uk/ext/generic/startup/?action=getData",
+					"protocol": "https",
+					"host": [
+						"www",
+						"onlinescoutmanager",
+						"co",
+						"uk"
+					],
+					"path": [
+						"ext",
+						"generic",
+						"startup",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "getData"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Members",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AUTH_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.onlinescoutmanager.co.uk/ext/members/contact/?section=scouts&action=getListOfMembers&sort=dob&sectionid=12442&termid=682542",
+					"protocol": "https",
+					"host": [
+						"www",
+						"onlinescoutmanager",
+						"co",
+						"uk"
+					],
+					"path": [
+						"ext",
+						"members",
+						"contact",
+						""
+					],
+					"query": [
+						{
+							"key": "section",
+							"value": "scouts"
+						},
+						{
+							"key": "action",
+							"value": "getListOfMembers"
+						},
+						{
+							"key": "sort",
+							"value": "dob"
+						},
+						{
+							"key": "sectionid",
+							"value": "12442"
+						},
+						{
+							"key": "termid",
+							"value": "682542"
+						},
+						{
+							"key": "action",
+							"value": "getMembers",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Individual Member",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AUTH_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.onlinescoutmanager.co.uk/ext/members/contact/?action=getIndividual&sectionid=12442&scoutid=831991&termid=682542&context=members",
+					"protocol": "https",
+					"host": [
+						"www",
+						"onlinescoutmanager",
+						"co",
+						"uk"
+					],
+					"path": [
+						"ext",
+						"members",
+						"contact",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "getIndividual"
+						},
+						{
+							"key": "sectionid",
+							"value": "12442"
+						},
+						{
+							"key": "scoutid",
+							"value": "831991"
+						},
+						{
+							"key": "termid",
+							"value": "682542"
+						},
+						{
+							"key": "context",
+							"value": "members"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Individual Member Details",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AUTH_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.onlinescoutmanager.co.uk/ext/customdata/?action=getData&section_id=12442&associated_id=831991&associated_type=member&context=members&group_order=section",
+					"protocol": "https",
+					"host": [
+						"www",
+						"onlinescoutmanager",
+						"co",
+						"uk"
+					],
+					"path": [
+						"ext",
+						"customdata",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "getData"
+						},
+						{
+							"key": "section_id",
+							"value": "12442"
+						},
+						{
+							"key": "associated_id",
+							"value": "831991"
+						},
+						{
+							"key": "associated_type",
+							"value": "member"
+						},
+						{
+							"key": "context",
+							"value": "members"
+						},
+						{
+							"key": "group_order",
+							"value": "section"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Events",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AUTH_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.onlinescoutmanager.co.uk/ext/events/summary/?action=get&sectionid=12442&termid=682542",
+					"protocol": "https",
+					"host": [
+						"www",
+						"onlinescoutmanager",
+						"co",
+						"uk"
+					],
+					"path": [
+						"ext",
+						"events",
+						"summary",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "get"
+						},
+						{
+							"key": "sectionid",
+							"value": "12442"
+						},
+						{
+							"key": "termid",
+							"value": "682542"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Event Details",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AUTH_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.onlinescoutmanager.co.uk/ext/events/event/?action=getAttendance&eventid=1038770&sectionid=12442&termid=682542",
+					"protocol": "https",
+					"host": [
+						"www",
+						"onlinescoutmanager",
+						"co",
+						"uk"
+					],
+					"path": [
+						"ext",
+						"events",
+						"event",
+						""
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "getAttendance"
+						},
+						{
+							"key": "eventid",
+							"value": "1038770"
+						},
+						{
+							"key": "sectionid",
+							"value": "12442"
+						},
+						{
+							"key": "termid",
+							"value": "682542"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetResource",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AUTH_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.onlinescoutmanager.co.uk/oauth/resource",
+					"protocol": "https",
+					"host": [
+						"www",
+						"onlinescoutmanager",
+						"co",
+						"uk"
+					],
+					"path": [
+						"oauth",
+						"resource"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

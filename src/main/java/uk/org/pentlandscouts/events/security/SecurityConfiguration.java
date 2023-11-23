@@ -12,6 +12,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
+
 @Configuration
 public class SecurityConfiguration {
 
@@ -34,7 +35,9 @@ public class SecurityConfiguration {
     {
         return (web) -> web.ignoring()
                 .requestMatchers(
-                                 new AntPathRequestMatcher("/swagger-ui/index.html"));
+                        new AntPathRequestMatcher("/version/get"),
+                        new AntPathRequestMatcher("/sensordata/delete/**"),
+                        new AntPathRequestMatcher("/swagger-ui/index.html"));
     }
 
     @Bean

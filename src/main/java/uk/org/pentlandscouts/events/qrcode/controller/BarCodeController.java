@@ -31,4 +31,10 @@ public class BarCodeController {
     public HttpMessageConverter<BufferedImage> createImageHttpMessageConverter() {
         return new BufferedImageHttpMessageConverter();
     }
+
+    @GetMapping("hello")
+    public String hello()
+    {
+        return "Hello";
+    }
 }

@@ -16,6 +16,7 @@
 	<properties>
 		<java.version>20</java.version>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -51,6 +52,29 @@
 			<artifactId>org.apache.oltu.oauth2.client</artifactId>
 			<version>1.0.2</version>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.github.kenglxn.qrgen/javase -->
+		<dependency>
+			<groupId>com.github.kenglxn.qrgen</groupId>
+			<artifactId>javase</artifactId>
+			<version>3.0.1</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>5.10.1</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-boot-starter</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+
+
 	</dependencies>
 
 	<build>
@@ -69,6 +93,11 @@
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>
+		</repository>
+
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
 		</repository>
 	</repositories>
 	<pluginRepositories>

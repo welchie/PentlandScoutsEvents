@@ -44,7 +44,7 @@
 						},
 						{
 							"key": "grant_type",
-							"value": "password&username=chris@weewelchie.org&password=used2Think$$",
+							"value": "password&username=<username>&password=<password>",
 							"disabled": true
 						}
 					]

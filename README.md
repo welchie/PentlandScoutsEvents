@@ -5,4 +5,5 @@ Pentland Scouts Events System
 mvn clean install 
 
 ## Running
+
 mvn spring-boot:run

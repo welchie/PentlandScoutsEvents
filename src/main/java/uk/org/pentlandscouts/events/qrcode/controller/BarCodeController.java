@@ -47,10 +47,9 @@ public class BarCodeController {
         String barcode = "http://ec2-34-244-123-50.eu-west-1.compute.amazonaws.com/version/get";
         //barcode = "http://ec2-34-244-123-50.eu-west-1.compute.amazonaws.com/sensordata/findbynameanddatebetween?name=Surface&startdate=2023-11-24%2015%3A00%3A00&enddate=2023-11-24%2019%3A00%3A00";
         barcode = "http://ec2-34-244-123-50.eu-west-1.compute.amazonaws.com/sensordata/findbynameanddatebetween?name=Surface&startdate=2023-11-20%2015%3A00%3A00&enddate=2023-11-20%2019%3A00%3A00";
+
         return okResponse(QRCodeGenerator.generateQRCodeImage(barcode));
     }
-
-
 
     private ResponseEntity<BufferedImage> okResponse(BufferedImage image) {
         return new ResponseEntity<>(image, HttpStatus.OK);

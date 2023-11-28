@@ -1,7 +1,6 @@
 package uk.org.pentlandscouts.events.security.model;
 
 import java.io.Serializable;
-import java.util.Date;
 import java.util.Objects;
 
 public class Person implements Serializable {
@@ -12,16 +11,9 @@ public class Person implements Serializable {
 
     private String lastName = "";
 
-    private Date dob;
+    private String dob= "";
 
-    public Person(String uid,String firstName, String lastName)
-    {
-        this.setUid(uid);
-        this.setFirstName(firstName);
-        this.setLastName(lastName);
-    }
-
-    public Person(String uid, String firstName, String lastName, Date dob)
+    public Person(String uid, String firstName, String lastName, String dob)
     {
         this.setUid(uid);
         this.setFirstName(firstName);
@@ -53,11 +45,11 @@ public class Person implements Serializable {
         this.lastName = lastName;
     }
 
-    public Date getDob() {
+    public String getDob() {
         return dob;
     }
 
-    public void setDob(Date dob) {
+    public void setDob(String dob) {
         this.dob = dob;
     }
 
